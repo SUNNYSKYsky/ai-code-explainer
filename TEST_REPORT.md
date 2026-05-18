@@ -12,10 +12,10 @@
 
 | 检查项 | 结果 |
 |---|---|
-| 工作目录 | `C:\Users\lenovo\Desktop\申请token` |
+| 工作目录 | `<PROJECT_ROOT>` |
 | tesseract.js 加载 | ✅ LOADED (createWorker, recognize 等 API 可用) |
-| corePath (绝对路径) | `C:\Users\lenovo\Desktop\申请token\node_modules\tesseract.js-core` — 存在 |
-| langPath (绝对路径) | `C:\Users\lenovo\Desktop\申请token\media\tesseract` — 存在 |
+| corePath (绝对路径) | `<PROJECT_ROOT>\node_modules\tesseract.js-core` — 存在 |
+| langPath (绝对路径) | `<PROJECT_ROOT>\media\tesseract` — 存在 |
 | eng.traineddata.gz | 存在, 10.4 MB, 有效 gzip (magic: 1f 8b) |
 
 ### 测试图片
