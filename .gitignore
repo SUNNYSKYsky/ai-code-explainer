@@ -1,0 +1,13 @@
+node_modules/
+dist/
+out/
+.vscode-test/
+*.vsix
+.env
+.DS_Store
+
+测试用图/
+网页版/
+ocr-test/
+test-fixtures/
+eng.traineddata

@@ -1,0 +1,117 @@
+{
+  "name": "ai-agent-cn-copilot",
+  "displayName": "AI Agent Command Center",
+  "description": "Bilingual AI assistant cockpit: explain code, check command safety, translate errors, optimize prompts. 双语 AI 助手驾驶舱。",
+  "version": "0.2.0",
+  "publisher": "ai-agent-cn-copilot",
+  "icon": "media/icon.png",
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": [
+    "Other",
+    "Education"
+  ],
+  "keywords": [
+    "中文",
+    "代码解释",
+    "AI Agent",
+    "小白",
+    "非程序员",
+    "Chinese",
+    "code explanation"
+  ],
+  "activationEvents": [
+    "onCommand:aiAgentChineseCabin.explainCode",
+    "onCommand:aiAgentChineseCabin.explainCommandSafety",
+    "onCommand:aiAgentChineseCabin.explainError",
+    "onCommand:aiAgentChineseCabin.optimizePrompt",
+    "onCommand:aiAgentChineseCabin.smartAnalyze",
+    "onCommand:aiAgentChineseCabin.openPanel"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "aiAgentChineseCabin.explainCode",
+        "title": "用中文解释这段代码"
+      },
+      {
+        "command": "aiAgentChineseCabin.explainCommandSafety",
+        "title": "解释这个命令安全吗"
+      },
+      {
+        "command": "aiAgentChineseCabin.explainError",
+        "title": "翻译这个报错"
+      },
+      {
+        "command": "aiAgentChineseCabin.optimizePrompt",
+        "title": "优化成 AI 提示词"
+      },
+      {
+        "command": "aiAgentChineseCabin.smartAnalyze",
+        "title": "Smart Analyze / 智能分析"
+      },
+      {
+        "command": "aiAgentChineseCabin.openPanel",
+        "title": "Open AI Agent Command Center / 打开驾驶舱"
+      }
+    ],
+    "menus": {
+      "editor/context": [
+        {
+          "command": "aiAgentChineseCabin.explainCode",
+          "when": "editorHasSelection",
+          "group": "ai-agent-cn-copilot@1"
+        },
+        {
+          "command": "aiAgentChineseCabin.explainCommandSafety",
+          "when": "editorHasSelection",
+          "group": "ai-agent-cn-copilot@2"
+        },
+        {
+          "command": "aiAgentChineseCabin.explainError",
+          "when": "editorHasSelection",
+          "group": "ai-agent-cn-copilot@3"
+        },
+        {
+          "command": "aiAgentChineseCabin.smartAnalyze",
+          "when": "editorHasSelection",
+          "group": "ai-agent-cn-copilot@0"
+        },
+        {
+          "command": "aiAgentChineseCabin.optimizePrompt",
+          "when": "editorHasSelection",
+          "group": "ai-agent-cn-copilot@4"
+        }
+      ],
+      "editor/title": [
+        {
+          "command": "aiAgentChineseCabin.openPanel",
+          "group": "navigation"
+        }
+      ]
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "package": "vsce package",
+    "lint": "eslint src --ext ts",
+    "ocr-spike": "tsx scripts/ocr-spike.ts",
+    "ocr-test": "tsx scripts/ocr-test.ts",
+    "core-test": "tsx scripts/core-test.ts",
+    "self-test": "npm run compile && npm run ocr-test && npm run core-test"
+  },
+  "devDependencies": {
+    "@types/node": "^25.8.0",
+    "@types/vscode": "^1.85.0",
+    "@vscode/vsce": "^2.22.0",
+    "tsx": "^4.22.0",
+    "typescript": "^5.3.0"
+  },
+  "dependencies": {
+    "tesseract.js": "^5.1.1"
+  }
+}

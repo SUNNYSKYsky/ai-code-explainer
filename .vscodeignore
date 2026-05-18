@@ -1,0 +1,14 @@
+.vscode/**
+.git/**
+# Only exclude browser WASM JS wrappers (backend uses bare .wasm via fs.readFileSync)
+node_modules/tesseract.js-core/*.wasm.js
+node_modules/**/*.map
+ocr-test/**
+test-fixtures/**
+测试用图/**
+网页版/**
+scripts/**
+src/**
+eng.traineddata
+tsconfig.json
+*.vsix
